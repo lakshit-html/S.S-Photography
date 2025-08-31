@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="SS Photography - Professional Photo & Videography by Suresh Solanki. Wedding highlights, team of experts, 5-star services in Jodhpur." />
-    <meta name="keywords" content="Photography, Videography, Wedding Photographer, Suresh Solanki, SS Photography, Jodhpur Photographer, Wedding Highlights" />
+    <meta name="description"
+        content="SS Photography - Professional Photo & Videography by Suresh Solanki. Wedding highlights, team of experts, 5-star services in Jodhpur." />
+    <meta name="keywords"
+        content="Photography, Videography, Wedding Photographer, Suresh Solanki, SS Photography, Jodhpur Photographer, Wedding Highlights" />
     <meta name="author" content="Suresh Solanki" />
     <meta name="robots" content="index, follow">
     <link rel="icon" href="favicon-32x32.png" type="image/png" />
 
-
     <title>SS Photography | Suresh Solanki - Wedding Photography & Videography</title>
     <style>
         /* Reset & base */
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background: #0f172a;
@@ -28,30 +29,32 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         a {
             color: #c7d2fe;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         a:hover {
             color: #3b82f6;
         }
-        
+
         img {
             max-width: 100%;
             display: block;
         }
+
         /* Container */
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
+
         /* Header */
-        
+
         header {
             background: #1e293b;
             padding: 1rem 0;
@@ -60,13 +63,13 @@
             z-index: 1000;
             box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
         }
-        
+
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-weight: 900;
             font-size: 1.8rem;
@@ -75,19 +78,19 @@
             cursor: pointer;
             user-select: none;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
             gap: 2rem;
         }
-        
+
         nav ul li a {
             font-weight: 600;
             font-size: 1rem;
             position: relative;
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -98,12 +101,78 @@
             background: #3b82f6;
             transition: width 0.3s ease;
         }
-        
+
         nav ul li a:hover::after {
             width: 100%;
         }
+
+        /* Hamburger menu button for mobile */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2.2rem;
+            color: #60a5fa;
+            cursor: pointer;
+            user-select: none;
+            z-index: 1100;
+        }
+
+        /* Mobile menu panel */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            /* hidden by default */
+            width: 280px;
+            height: 100vh;
+            background: #1e293b;
+            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.5);
+            padding: 2rem 1.5rem;
+            transition: right 0.3s ease;
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu .close-menu {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            color: #60a5fa;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            user-select: none;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .mobile-menu ul li a {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover,
+        .mobile-menu ul li a:focus {
+            color: #3b82f6;
+            outline: none;
+        }
+
         /* Hero Section */
-        
+
         .hero {
             position: relative;
             display: flex;
@@ -117,7 +186,7 @@
             overflow: hidden;
             color: #e0e7ff;
         }
-        
+
         .hero::before {
             content: "";
             background-image: url("Photos/0I0A0565.JPG");
@@ -136,12 +205,12 @@
             background-size: contain;
             z-index: 0;
         }
-        
+
         .hero>* {
             position: relative;
             z-index: 1;
         }
-        
+
         .hero h1 {
             font-size: 3rem;
             font-weight: 900;
@@ -149,21 +218,21 @@
             margin-bottom: 0.5rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-        
+
         .hero h2 {
             font-size: 1.5rem;
             font-weight: 600;
             color: #a5b4fc;
             margin-bottom: 1.5rem;
         }
-        
+
         .hero p {
             max-width: 600px;
             font-size: 1.1rem;
             color: #c7d2fe;
             margin-bottom: 2rem;
         }
-        
+
         .btn-primary {
             background: #3b82f6;
             color: #fff;
@@ -176,13 +245,14 @@
             border: none;
             transition: background 0.3s ease, transform 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             background: #2563eb;
             transform: scale(1.05);
         }
+
         /* Image slider */
-        
+
         .slider {
             position: relative;
             width: 100%;
@@ -192,18 +262,18 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
-        
+
         .slides {
             display: flex;
             transition: transform 0.7s ease-in-out;
         }
-        
+
         .slide {
             min-width: 100%;
             user-select: none;
             position: relative;
         }
-        
+
         .slide img {
             width: 100%;
             height: 500px;
@@ -211,12 +281,13 @@
             filter: brightness(0.85);
             transition: filter 0.3s ease;
         }
-        
+
         .slide img:hover {
             filter: brightness(1);
         }
+
         /* Slider arrows */
-        
+
         .arrow {
             position: absolute;
             top: 50%;
@@ -234,26 +305,27 @@
             transition: background 0.3s ease;
             z-index: 10;
         }
-        
+
         .arrow:hover {
             background: #2563eb;
         }
-        
+
         .arrow-left {
             left: 15px;
         }
-        
+
         .arrow-right {
             right: 15px;
         }
+
         /* Wedding Highlights Section */
-        
+
         #highlights {
             background: #1e293b;
             padding: 4rem 1rem 6rem;
             text-align: center;
         }
-        
+
         #highlights h2 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -261,14 +333,14 @@
             margin-bottom: 1rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-        
+
         #highlights p {
             max-width: 700px;
             margin: 0 auto 3rem;
             font-size: 1.1rem;
             color: #c7d2fe;
         }
-        
+
         .highlights-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -276,7 +348,7 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-        
+
         .highlight-item {
             border-radius: 12px;
             overflow: hidden;
@@ -285,19 +357,19 @@
             position: relative;
             transition: transform 0.3s ease;
         }
-        
+
         .highlight-item:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
         }
-        
+
         .highlight-item img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             display: block;
         }
-        
+
         .highlight-caption {
             position: absolute;
             bottom: 0;
@@ -309,14 +381,15 @@
             font-size: 1rem;
             text-align: left;
         }
+
         /* Team Section */
-        
+
         #team {
             background: #0f172a;
             padding: 4rem 1rem 6rem;
             text-align: center;
         }
-        
+
         #team h2 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -324,14 +397,14 @@
             margin-bottom: 1rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-        
+
         #team p {
             max-width: 700px;
             margin: 0 auto 3rem;
             font-size: 1.1rem;
             color: #c7d2fe;
         }
-        
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -339,7 +412,7 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .team-member {
             background: #1e293b;
             border-radius: 15px;
@@ -347,12 +420,12 @@
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
             transition: transform 0.3s ease;
         }
-        
+
         .team-member:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
         }
-        
+
         .team-photo {
             width: 120px;
             height: 120px;
@@ -362,26 +435,27 @@
             border: 3px solid #3b82f6;
             box-shadow: 0 0 15px #3b82f6;
         }
-        
+
         .team-name {
             font-weight: 700;
             font-size: 1.2rem;
             color: #60a5fa;
             margin-bottom: 0.3rem;
         }
-        
+
         .team-role {
             font-size: 1rem;
             color: #a5b4fc;
         }
+
         /* Contact Section */
-        
+
         #contact {
             background: #1e293b;
             padding: 4rem 1rem 6rem;
             text-align: center;
         }
-        
+
         #contact h2 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -389,14 +463,14 @@
             margin-bottom: 1rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-        
+
         #contact p {
             max-width: 700px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
             color: #c7d2fe;
         }
-        
+
         .contact-info {
             max-width: 500px;
             margin: 0 auto;
@@ -404,12 +478,13 @@
             color: #a5b4fc;
             line-height: 1.8;
         }
-        
+
         .contact-info strong {
             color: #60a5fa;
         }
+
         /* Footer */
-        
+
         footer {
             background: #0f172a;
             text-align: center;
@@ -418,36 +493,70 @@
             color: #64748b;
             user-select: none;
         }
+
         /* Animations */
-        
+
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .fade-in-up {
             animation: fadeInUp 1s ease forwards;
         }
+
         /* Responsive */
-        
+
         @media (max-width: 768px) {
+            nav.nav-desktop {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
+
             .hero h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
+
             nav ul {
                 gap: 1rem;
             }
+
             .team-grid {
                 grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+
+            /* Adjust slider height */
+            .slide img {
+                height: 300px;
+            }
+
+            /* Adjust highlights gallery grid */
+            .highlights-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            /* Adjust team grid */
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* Contact info font size */
+            .contact-info {
+                font-size: 1rem;
             }
         }
     </style>
@@ -458,7 +567,7 @@
     <header>
         <div class="container nav-container">
             <div class="logo" aria-label="SS Photography Logo" tabindex="0">SS Photography</div>
-            <nav aria-label="Primary Navigation">
+            <nav aria-label="Primary Navigation" class="nav-desktop">
                 <ul>
                     <li><a href="#hero" tabindex="0">Home</a></li>
                     <li><a href="#highlights" tabindex="0">Wedding Highlights</a></li>
@@ -466,7 +575,23 @@
                     <li><a href="#contact" tabindex="0">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Hamburger menu button for mobile -->
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                &#9776;
+            </button>
         </div>
+
+        <!-- Mobile side panel menu -->
+        <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" aria-hidden="true">
+            <button class="close-menu" aria-label="Close menu" tabindex="0">&times;</button>
+            <ul>
+                <li><a href="#hero" tabindex="0">Home</a></li>
+                <li><a href="#highlights" tabindex="0">Wedding Highlights</a></li>
+                <li><a href="#team" tabindex="0">Our Team</a></li>
+                <li><a href="#contact" tabindex="0">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="hero" class="hero" role="banner" aria-label="Welcome to SS Photography">
@@ -475,7 +600,9 @@
         <p class="fade-in-up" style="animation-delay: 0.4s;">
             Capturing your precious moments with a 5-star experience. Expert team, stunning visuals, and unforgettable wedding highlights.
         </p>
-        <button class="btn-primary fade-in-up" style="animation-delay: 0.6s;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Contact SS Photography">Book Your Session</button>
+        <button class="btn-primary fade-in-up" style="animation-delay: 0.6s;"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+            aria-label="Contact SS Photography">Book Your Session</button>
     </section>
 
     <section class="slider" aria-label="Image slider showcasing photography highlights">
@@ -532,7 +659,6 @@
         <h2>Our Expert Team</h2>
         <p>Meet the talented professionals behind SS Photography. A dedicated team of 8-10 experts committed to delivering a flawless 5-star wedding experience.</p>
         <div class="team-grid" role="list">
-            <!-- All team member photos replaced with male avatars -->
             <div class="team-member" role="listitem" tabindex="0">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Suresh Solanki - Lead Photographer" class="team-photo" />
                 <div class="team-name">Suresh Solanki</div>
@@ -645,12 +771,45 @@
 
         // Initial setup
         updateSlides();
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = mobileMenu.querySelector('.close-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        const openMenu = () => {
+            mobileMenu.classList.add('open');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            hamburger.setAttribute('aria-expanded', 'true');
+            // Prevent body scroll when menu open
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+
+        // Close menu when clicking any nav link inside mobile menu
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Accessibility: close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMenu();
+                hamburger.focus();
+            }
+        });
     </script>
 
 </body>
 
-
 </html>
-
-
-
