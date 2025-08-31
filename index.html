@@ -4,57 +4,55 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-        content="SS Photography - Professional Photo & Videography by Suresh Solanki. Wedding highlights, team of experts, 5-star services in Jodhpur." />
-    <meta name="keywords"
-        content="Photography, Videography, Wedding Photographer, Suresh Solanki, SS Photography, Jodhpur Photographer, Wedding Highlights" />
+    <meta name="description" content="SS Photography - Professional Photo & Videography by Suresh Solanki. Wedding highlights, team of experts, 5-star services in Jodhpur." />
+    <meta name="keywords" content="Photography, Videography, Wedding Photographer, Suresh Solanki, SS Photography, Jodhpur Photographer, Wedding Highlights" />
     <meta name="author" content="Suresh Solanki" />
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow" />
     <link rel="icon" href="favicon-32x32.png" type="image/png" />
 
-    <title>SS Photography | Suresh Solanki - Wedding Photography & Videography</title>
+    <title>
+        SS Photography | Suresh Solanki - Wedding Photography & Videography
+    </title>
     <style>
         /* Reset & base */
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
             background: #0f172a;
             color: #e0e7ff;
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+        
         a {
             color: #c7d2fe;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+        
         a:hover {
             color: #3b82f6;
         }
-
+        
         img {
             max-width: 100%;
             display: block;
         }
-
         /* Container */
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-
         /* Header */
-
+        
         header {
             background: #1e293b;
             padding: 1rem 0;
@@ -63,13 +61,13 @@
             z-index: 1000;
             box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
         }
-
+        
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
             font-weight: 900;
             font-size: 1.8rem;
@@ -78,21 +76,21 @@
             cursor: pointer;
             user-select: none;
         }
-
+        
         nav ul {
             list-style: none;
             display: flex;
             gap: 2rem;
         }
-
+        
         nav ul li a {
             font-weight: 600;
             font-size: 1rem;
             position: relative;
         }
-
+        
         nav ul li a::after {
-            content: '';
+            content: "";
             position: absolute;
             width: 0%;
             height: 2px;
@@ -101,12 +99,12 @@
             background: #3b82f6;
             transition: width 0.3s ease;
         }
-
+        
         nav ul li a:hover::after {
             width: 100%;
         }
-
         /* Hamburger menu button for mobile */
+        
         .hamburger {
             display: none;
             background: none;
@@ -117,8 +115,8 @@
             user-select: none;
             z-index: 1100;
         }
-
         /* Mobile menu panel */
+        
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -134,29 +132,29 @@
             display: flex;
             flex-direction: column;
         }
-
+        
         .mobile-menu.open {
             right: 0;
         }
-
+        
         .mobile-menu .close-menu {
-            align-self: flex-end;
+            align-self: flex-start;
             background: none;
             border: none;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #60a5fa;
             cursor: pointer;
             margin-bottom: 2rem;
             user-select: none;
         }
-
+        
         .mobile-menu ul {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
         }
-
+        
         .mobile-menu ul li a {
             font-weight: 700;
             font-size: 1.3rem;
@@ -164,15 +162,14 @@
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+        
         .mobile-menu ul li a:hover,
         .mobile-menu ul li a:focus {
             color: #3b82f6;
             outline: none;
         }
-
         /* Hero Section */
-
+        
         .hero {
             position: relative;
             display: flex;
@@ -186,7 +183,7 @@
             overflow: hidden;
             color: #e0e7ff;
         }
-
+        
         .hero::before {
             content: "";
             background-image: url("0I0A0565.JPG");
@@ -196,7 +193,7 @@
             left: 50%;
             width: 1800px;
             filter: blur(8px);
-            height: 18000px;
+            height: 1800px;
             opacity: 0.3;
             transform: translate(-50%, -50%);
             pointer-events: none;
@@ -205,12 +202,12 @@
             background-size: contain;
             z-index: 0;
         }
-
+        
         .hero>* {
             position: relative;
             z-index: 1;
         }
-
+        
         .hero h1 {
             font-size: 3rem;
             font-weight: 900;
@@ -218,21 +215,21 @@
             margin-bottom: 0.5rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-
+        
         .hero h2 {
             font-size: 1.5rem;
             font-weight: 600;
             color: #a5b4fc;
             margin-bottom: 1.5rem;
         }
-
+        
         .hero p {
             max-width: 600px;
             font-size: 1.1rem;
             color: #c7d2fe;
             margin-bottom: 2rem;
         }
-
+        
         .btn-primary {
             background: #3b82f6;
             color: #fff;
@@ -245,14 +242,13 @@
             border: none;
             transition: background 0.3s ease, transform 0.3s ease;
         }
-
+        
         .btn-primary:hover {
             background: #2563eb;
             transform: scale(1.05);
         }
-
         /* Image slider */
-
+        
         .slider {
             position: relative;
             width: 100%;
@@ -262,18 +258,22 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
         }
-
+        
         .slides {
             display: flex;
             transition: transform 0.7s ease-in-out;
         }
-
+        
         .slide {
             min-width: 100%;
             user-select: none;
             position: relative;
         }
-
+        
+        .hidden {
+            display: none !important;
+        }
+        
         .slide img {
             width: 100%;
             height: 500px;
@@ -281,13 +281,12 @@
             filter: brightness(0.85);
             transition: filter 0.3s ease;
         }
-
+        
         .slide img:hover {
             filter: brightness(1);
         }
-
         /* Slider arrows */
-
+        
         .arrow {
             position: absolute;
             top: 50%;
@@ -305,27 +304,26 @@
             transition: background 0.3s ease;
             z-index: 10;
         }
-
+        
         .arrow:hover {
             background: #2563eb;
         }
-
+        
         .arrow-left {
             left: 15px;
         }
-
+        
         .arrow-right {
             right: 15px;
         }
-
         /* Wedding Highlights Section */
-
+        
         #highlights {
             background: #1e293b;
             padding: 4rem 1rem 6rem;
             text-align: center;
         }
-
+        
         #highlights h2 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -333,14 +331,14 @@
             margin-bottom: 1rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-
+        
         #highlights p {
             max-width: 700px;
             margin: 0 auto 3rem;
             font-size: 1.1rem;
             color: #c7d2fe;
         }
-
+        
         .highlights-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -348,7 +346,7 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-
+        
         .highlight-item {
             border-radius: 12px;
             overflow: hidden;
@@ -357,19 +355,19 @@
             position: relative;
             transition: transform 0.3s ease;
         }
-
+        
         .highlight-item:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
         }
-
+        
         .highlight-item img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             display: block;
         }
-
+        
         .highlight-caption {
             position: absolute;
             bottom: 0;
@@ -381,15 +379,14 @@
             font-size: 1rem;
             text-align: left;
         }
-
         /* Team Section */
-
+        
         #team {
             background: #0f172a;
             padding: 4rem 1rem 6rem;
             text-align: center;
         }
-
+        
         #team h2 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -397,14 +394,14 @@
             margin-bottom: 1rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-
+        
         #team p {
             max-width: 700px;
             margin: 0 auto 3rem;
             font-size: 1.1rem;
             color: #c7d2fe;
         }
-
+        
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -412,7 +409,7 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-
+        
         .team-member {
             background: #1e293b;
             border-radius: 15px;
@@ -420,12 +417,12 @@
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
             transition: transform 0.3s ease;
         }
-
+        
         .team-member:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
         }
-
+        
         .team-photo {
             width: 120px;
             height: 120px;
@@ -435,27 +432,26 @@
             border: 3px solid #3b82f6;
             box-shadow: 0 0 15px #3b82f6;
         }
-
+        
         .team-name {
             font-weight: 700;
             font-size: 1.2rem;
             color: #60a5fa;
             margin-bottom: 0.3rem;
         }
-
+        
         .team-role {
             font-size: 1rem;
             color: #a5b4fc;
         }
-
         /* Contact Section */
-
+        
         #contact {
             background: #1e293b;
             padding: 4rem 1rem 6rem;
             text-align: center;
         }
-
+        
         #contact h2 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -463,14 +459,14 @@
             margin-bottom: 1rem;
             text-shadow: 0 0 10px #3b82f6;
         }
-
+        
         #contact p {
             max-width: 700px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
             color: #c7d2fe;
         }
-
+        
         .contact-info {
             max-width: 500px;
             margin: 0 auto;
@@ -478,13 +474,12 @@
             color: #a5b4fc;
             line-height: 1.8;
         }
-
+        
         .contact-info strong {
             color: #60a5fa;
         }
-
         /* Footer */
-
+        
         footer {
             background: #0f172a;
             text-align: center;
@@ -493,67 +488,55 @@
             color: #64748b;
             user-select: none;
         }
-
         /* Animations */
-
+        
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+        
         .fade-in-up {
             animation: fadeInUp 1s ease forwards;
         }
-
         /* Responsive */
-
+        
         @media (max-width: 768px) {
             nav.nav-desktop {
                 display: none;
             }
-
             .hamburger {
                 display: block;
             }
-
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero h2 {
                 font-size: 1.1rem;
             }
-
             nav ul {
                 gap: 1rem;
             }
-
             .team-grid {
                 grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             }
-
             /* Adjust slider height */
             .slide img {
                 height: 300px;
             }
-
             /* Adjust highlights gallery grid */
             .highlights-gallery {
                 grid-template-columns: 1fr;
             }
-
             /* Adjust team grid */
             .team-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
             /* Contact info font size */
             .contact-info {
                 font-size: 1rem;
@@ -563,10 +546,11 @@
 </head>
 
 <body>
-
     <header>
         <div class="container nav-container">
-            <div class="logo" aria-label="SS Photography Logo" tabindex="0">SS Photography</div>
+            <div class="logo" aria-label="SS Photography Logo" tabindex="0">
+                SS Photography
+            </div>
             <nav aria-label="Primary Navigation" class="nav-desktop">
                 <ul>
                     <li><a href="#hero" tabindex="0">Home</a></li>
@@ -578,13 +562,15 @@
 
             <!-- Hamburger menu button for mobile -->
             <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
-                &#9776;
-            </button>
+          &#9776;
+        </button>
         </div>
 
         <!-- Mobile side panel menu -->
         <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" aria-hidden="true">
-            <button class="close-menu" aria-label="Close menu" tabindex="0">&times;</button>
+            <button class="close-menu" aria-label="Close menu" tabindex="0">
+          &times;
+        </button>
             <ul>
                 <li><a href="#hero" tabindex="0">Home</a></li>
                 <li><a href="#highlights" tabindex="0">Wedding Highlights</a></li>
@@ -596,18 +582,24 @@
 
     <section id="hero" class="hero" role="banner" aria-label="Welcome to SS Photography">
         <h1 class="fade-in-up">SS Photography</h1>
-        <h2 class="fade-in-up" style="animation-delay: 0.2s;">By Suresh Solanki - Wedding Photo & Videography</h2>
-        <p class="fade-in-up" style="animation-delay: 0.4s;">
+        <h2 class="fade-in-up" style="animation-delay: 0.2s">
+            By Suresh Solanki - Wedding Photo & Videography
+        </h2>
+        <p class="fade-in-up" style="animation-delay: 0.4s">
             Capturing your precious moments with a 5-star experience. Expert team, stunning visuals, and unforgettable wedding highlights.
         </p>
-        <button class="btn-primary fade-in-up" style="animation-delay: 0.6s;"
-            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-            aria-label="Contact SS Photography">Book Your Session</button>
+        <button class="btn-primary fade-in-up" style="animation-delay: 0.6s" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Contact SS Photography">
+        Book Your Session
+      </button>
     </section>
 
     <section class="slider" aria-label="Image slider showcasing photography highlights">
-        <div class="arrow arrow-left" role="button" aria-label="Previous Slide" tabindex="0">&#10094;</div>
-        <div class="arrow arrow-right" role="button" aria-label="Next Slide" tabindex="0">&#10095;</div>
+        <div class="arrow arrow-left" role="button" aria-label="Previous Slide" tabindex="0">
+            &#10094;
+        </div>
+        <div class="arrow arrow-right" role="button" aria-label="Next Slide" tabindex="0">
+            &#10095;
+        </div>
         <div class="slides" id="slides">
             <div class="slide" aria-hidden="false">
                 <img src="0I0A0888.JPG" alt="Bride and groom holding hands in sunset" />
@@ -626,7 +618,9 @@
 
     <section id="highlights" aria-label="Wedding Highlights">
         <h2>Wedding Highlights</h2>
-        <p>Experience the magic of your special day through our curated wedding highlights. Each moment captured with passion and precision.</p>
+        <p>
+            Experience the magic of your special day through our curated wedding highlights. Each moment captured with passion and precision.
+        </p>
         <div class="highlights-gallery" id="highlights-gallery" aria-live="polite">
             <div class="highlight-item" tabindex="0">
                 <img src="DSC_6127.JPG" alt="Bride and groom first dance" />
@@ -657,7 +651,9 @@
 
     <section id="team" aria-label="Meet Our Team">
         <h2>Our Expert Team</h2>
-        <p>Meet the talented professionals behind SS Photography. A dedicated team of 8-10 experts committed to delivering a flawless 5-star wedding experience.</p>
+        <p>
+            Meet the talented professionals behind SS Photography. A dedicated team of 8-10 experts committed to delivering a flawless 5-star wedding experience.
+        </p>
         <div class="team-grid" role="list">
             <div class="team-member" role="listitem" tabindex="0">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Suresh Solanki - Lead Photographer" class="team-photo" />
@@ -704,114 +700,141 @@
 
     <section id="contact" aria-label="Contact SS Photography">
         <h2>Contact Us</h2>
-        <p>Ready to capture your unforgettable moments? Reach out to SS Photography today for bookings and inquiries.</p>
+        <p>
+            Ready to capture your unforgettable moments? Reach out to SS Photography today for bookings and inquiries.
+        </p>
         <div class="contact-info" role="contentinfo">
-            <p><strong>Photographer:</strong> Suresh Solanki </p>
-            <p><strong>Email:</strong> <a href="mailto:ssphotographyjodhpur@gmail.com" aria-label="Email ssphotographyjodhpur@gmail.com">ssphotographyjodhpur@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+919214404404" aria-label="Call 9214404404">+91 92144 04404</a></p>
-            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ssphotography_jodhpur/" aria-label="INSTAGRAM S.S photography">S.S Photography</a></p>
-            <p><strong>YouTube Channel:</strong> <a href="https://www.youtube.com/@SSPHOTOGRAPHYJodhpur" target="_blank" rel="noopener" aria-label="Visit SS Photography Jodhpur YouTube Channel">SSPHOTOGRAPHYJodhpur</a></p>
-        </div>
+            <p><strong>Photographer:</strong> Suresh Solanki</p>
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:ssphotographyjodhpur@gmail.com" aria-label="Email ssphotographyjodhpur@gmail.com">ssphotographyjodhpur@gmail.com</a
+          >
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+919214404404" aria-label="Call 9214404404"
+            >+91 92144 04404</a
+          >
+        </p>
+        <p>
+          <strong>Instagram:</strong>
+          <a
+            href="https://www.instagram.com/ssphotography_jodhpur/"
+            aria-label="INSTAGRAM S.S photography"
+            >S.S Photography</a
+          >
+        </p>
+        <p>
+          <strong>YouTube Channel:</strong>
+          <a
+            href="https://www.youtube.com/@SSPHOTOGRAPHYJodhpur"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit SS Photography Jodhpur YouTube Channel"
+            >SSPHOTOGRAPHYJodhpur</a
+          >
+        </p>
+      </div>
     </section>
 
     <footer>
-        &copy; 2024 SS Photography. All rights reserved. Designed by Suresh Solanki.
+      &copy; 2024 SS Photography. All rights reserved. Designed by Suresh
+      Solanki.
     </footer>
 
     <script>
-        // Slider functionality
-        const slides = document.getElementById('slides');
-        const slideCount = slides.children.length;
-        let currentIndex = 0;
+      // Slider functionality
+      const slides = document.getElementById("slides");
+      const slideCount = slides.children.length;
+      let currentIndex = 0;
 
-        const updateSlides = () => {
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            // Update aria-hidden for accessibility
-            for (let i = 0; i < slideCount; i++) {
-                slides.children[i].setAttribute('aria-hidden', i !== currentIndex);
-            }
-        };
+      const updateSlides = () => {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Update aria-hidden for accessibility
+        for (let i = 0; i < slideCount; i++) {
+          slides.children[i].setAttribute("aria-hidden", i !== currentIndex);
+        }
+      };
 
-        const prevBtn = document.querySelector('.arrow-left');
-        const nextBtn = document.querySelector('.arrow-right');
+      const prevBtn = document.querySelector(".arrow-left");
+      const nextBtn = document.querySelector(".arrow-right");
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-            updateSlides();
-        });
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slideCount;
-            updateSlides();
-        });
-
-        // Keyboard accessibility for arrows
-        [prevBtn, nextBtn].forEach(btn => {
-            btn.addEventListener('keydown', e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    btn.click();
-                }
-            });
-        });
-
-        // Auto slide every 6 seconds
-        let autoSlide = setInterval(() => {
-            currentIndex = (currentIndex + 1) % slideCount;
-            updateSlides();
-        }, 6000);
-
-        // Pause auto slide on hover
-        slides.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
-        slides.parentElement.addEventListener('mouseleave', () => {
-            autoSlide = setInterval(() => {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSlides();
-            }, 6000);
-        });
-
-        // Initial setup
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
         updateSlides();
+      });
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlides();
+      });
 
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = mobileMenu.querySelector('.close-menu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-
-        const openMenu = () => {
-            mobileMenu.classList.add('open');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            hamburger.setAttribute('aria-expanded', 'true');
-            // Prevent body scroll when menu open
-            document.body.style.overflow = 'hidden';
-        };
-
-        const closeMenu = () => {
-            mobileMenu.classList.remove('open');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        };
-
-        hamburger.addEventListener('click', openMenu);
-        closeMenuBtn.addEventListener('click', closeMenu);
-
-        // Close menu when clicking any nav link inside mobile menu
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
+      // Keyboard accessibility for arrows
+      [prevBtn, nextBtn].forEach((btn) => {
+        btn.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            btn.click();
+          }
         });
+      });
 
-        // Accessibility: close menu on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-                closeMenu();
-                hamburger.focus();
-            }
-        });
+      // Auto slide every 6 seconds
+      let autoSlide = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlides();
+      }, 6000);
+
+      // Pause auto slide on hover
+      slides.parentElement.addEventListener("mouseenter", () =>
+        clearInterval(autoSlide)
+      );
+      slides.parentElement.addEventListener("mouseleave", () => {
+        autoSlide = setInterval(() => {
+          currentIndex = (currentIndex + 1) % slideCount;
+          updateSlides();
+        }, 6000);
+      });
+
+      // Initial setup
+      updateSlides();
+
+      // Mobile menu toggle
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenuBtn = mobileMenu.querySelector(".close-menu");
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+
+      const openMenu = () => {
+        mobileMenu.classList.add("open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        hamburger.setAttribute("aria-expanded", "true");
+        hamburger.classList.add("hidden"); // Hide hamburger
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeMenu = () => {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.classList.remove("hidden"); // Show hamburger
+        document.body.style.overflow = "";
+      };
+
+      hamburger.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+
+      // Close menu when clicking any nav link inside mobile menu
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Accessibility: close menu on Escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+          closeMenu();
+          hamburger.focus();
+        }
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
-
-
