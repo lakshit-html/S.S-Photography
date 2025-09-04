@@ -29,50 +29,6 @@
             color: #495057;
             line-height: 1.6;
             overflow-x: hidden;
-            perspective: 1px;
-            height: 100vh;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-        
-        .parallax-container {
-            height: 100vh;
-            overflow-x: hidden;
-            overflow-y: auto;
-            perspective: 1px;
-        }
-        
-        .parallax-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        
-        .parallax-back {
-            transform: translateZ(-1px) scale(2);
-        }
-        
-        .parallax-base {
-            transform: translateZ(0);
-        }
-        
-        .camera-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.05;
-        }
-        
-        .camera-element {
-            position: absolute;
-            font-size: 8rem;
-            color: #6c63ff;
-            opacity: 0.7;
         }
         
         a {
@@ -215,7 +171,7 @@
             outline: none;
         }
         
-        /* Hero Section */
+        /* Hero Section with 3D Camera */
         .hero {
             position: relative;
             display: flex;
@@ -224,10 +180,72 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.8) 100%);
             padding: 2rem 1rem;
             overflow: hidden;
             color: #495057;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.8) 100%);
+        }
+        
+        .camera-3d {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(10deg) rotateY(5deg);
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        
+        .camera-body {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(45deg, #333, #555);
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            transform: translateZ(20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .camera-lens {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #000, #222);
+            border-radius: 50%;
+            top: 35px;
+            left: 30px;
+            transform: translateZ(30px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .camera-viewfinder {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            background: #000;
+            border-radius: 5px;
+            top: 20px;
+            right: 30px;
+            transform: translateZ(25px);
+        }
+        
+        .camera-details {
+            position: absolute;
+            width: 60px;
+            height: 5px;
+            background: #444;
+            bottom: 20px;
+            left: 70px;
+            transform: translateZ(25px);
+            border-radius: 2px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
@@ -645,6 +663,48 @@
             cursor: pointer;
         }
         
+        .typing-indicator {
+            display: none;
+            padding: 0.8rem;
+            background: #f1f3f5;
+            border-radius: 15px;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            float: left;
+            margin: 0 1px;
+            background-color: #6c757d;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        
+        .typing-indicator span:nth-of-type(1) {
+            animation: typing 1s infinite;
+        }
+        
+        .typing-indicator span:nth-of-type(2) {
+            animation: typing 1s 0.33s infinite;
+        }
+        
+        .typing-indicator span:nth-of-type(3) {
+            animation: typing 1s 0.66s infinite;
+        }
+        
+        @keyframes typing {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             nav.nav-desktop {
@@ -696,15 +756,15 @@
                 width: 300px;
                 right: -20px;
             }
+            
+            .camera-3d {
+                transform: translate(-50%, -50%) scale(0.8);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="camera-background" id="camera-bg">
-        <!-- Camera elements will be added by JavaScript -->
-    </div>
-
     <header>
         <div class="container nav-container">
             <div class="logo" aria-label="SS Photography Logo" tabindex="0">
@@ -740,16 +800,26 @@
     </header>
 
     <section id="hero" class="hero" role="banner" aria-label="Welcome to SS Photography">
-        <h1 class="fade-in-up">SS Photography</h1>
-        <h2 class="fade-in-up" style="animation-delay: 0.2s">
-            By Suresh Solanki - Wedding Photo & Videography
-        </h2>
-        <p class="fade-in-up" style="animation-delay: 0.4s">
-            Capturing your precious moments with a 5-star experience. Expert team, stunning visuals, and unforgettable wedding highlights.
-        </p>
-        <button class="btn-primary fade-in-up" style="animation-delay: 0.6s" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Contact SS Photography">
-            Book Your Session
-        </button>
+        <!-- 3D Camera in Background -->
+        <div class="camera-3d">
+            <div class="camera-body"></div>
+            <div class="camera-lens"></div>
+            <div class="camera-viewfinder"></div>
+            <div class="camera-details"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="fade-in-up">SS Photography</h1>
+            <h2 class="fade-in-up" style="animation-delay: 0.2s">
+                By Suresh Solanki - Wedding Photo & Videography
+            </h2>
+            <p class="fade-in-up" style="animation-delay: 0.4s">
+                Capturing your precious moments with a 5-star experience. Expert team, stunning visuals, and unforgettable wedding highlights.
+            </p>
+            <button class="btn-primary fade-in-up" style="animation-delay: 0.6s" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Contact SS Photography">
+                Book Your Session
+            </button>
+        </div>
     </section>
 
     <section class="slider" aria-label="Image slider showcasing photography highlights">
@@ -902,6 +972,11 @@
                     Hi there! I'm your photography assistant. How can I help you today?
                 </div>
             </div>
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="chatbot-input">
                 <input type="text" id="chatbot-input" placeholder="Type your message...">
                 <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
@@ -1003,32 +1078,12 @@
             }
         });
 
-        // 3D Camera Background Effect
-        const cameraBg = document.getElementById('camera-bg');
-        const cameraIcons = ['fa-camera', 'fa-video', 'fa-photo-film', 'fa-clapperboard'];
-        
-        // Create camera elements for the background
-        for (let i = 0; i < 20; i++) {
-            const cameraElement = document.createElement('i');
-            cameraElement.className = `camera-element fas ${cameraIcons[Math.floor(Math.random() * cameraIcons.length)]}`;
-            cameraElement.style.left = `${Math.random() * 100}%`;
-            cameraElement.style.top = `${Math.random() * 100}%`;
-            cameraElement.style.fontSize = `${Math.random() * 4 + 2}rem`;
-            cameraElement.style.opacity = `${Math.random() * 0.4 + 0.1}`;
-            cameraElement.style.transform = `rotate(${Math.random() * 360}deg)`;
-            cameraBg.appendChild(cameraElement);
-        }
-
-        // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.camera-element');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.2 + (index * 0.02);
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px) rotate(${Math.random() * 360}deg)`;
-            });
+        // 3D Camera Effect
+        const camera3d = document.querySelector('.camera-3d');
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 25;
+            const y = (window.innerHeight / 2 - e.clientY) / 25;
+            camera3d.style.transform = `translate(-50%, -50%) rotateY(${x}deg) rotateX(${y}deg)`;
         });
 
         // Chatbot functionality
@@ -1038,6 +1093,7 @@
         const chatbotMessages = document.getElementById('chatbot-messages');
         const chatbotInput = document.getElementById('chatbot-input');
         const chatbotSend = document.getElementById('chatbot-send');
+        const typingIndicator = document.getElementById('typing-indicator');
 
         // Toggle chatbot window
         chatbotBtn.addEventListener('click', () => {
@@ -1049,17 +1105,28 @@
         });
 
         // Send message function
-        const sendMessage = () => {
+        const sendMessage = async () => {
             const message = chatbotInput.value.trim();
             if (message) {
                 // Add user message
                 addMessage(message, 'user');
                 chatbotInput.value = '';
                 
-                // Simulate bot response
-                setTimeout(() => {
-                    generateBotResponse(message);
-                }, 1000);
+                // Show typing indicator
+                typingIndicator.style.display = 'block';
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                
+                try {
+                    // Generate AI response using Gemini API
+                    const response = await generateAIResponse(message);
+                    addMessage(response, 'bot');
+                } catch (error) {
+                    console.error('Error generating AI response:', error);
+                    addMessage("I'm sorry, I'm having trouble connecting to the AI service. Please try again later.", 'bot');
+                } finally {
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+                }
             }
         };
 
@@ -1072,28 +1139,41 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         };
 
-        // Generate bot response
-        const generateBotResponse = (userMessage) => {
-            let response = '';
-            userMessage = userMessage.toLowerCase();
+        // Generate AI response using Gemini API
+        const generateAIResponse = async (userMessage) => {
+            const API_KEY = 'AIzaSyAdt-4PBIM2S1hLy6htAuBuvxXZDDgStcA';
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
             
-            if (userMessage.includes('hello') || userMessage.includes('hi') || userMessage.includes('hey')) {
-                response = 'Hello! How can I assist you with your photography needs today?';
-            } else if (userMessage.includes('price') || userMessage.includes('cost')) {
-                response = 'Our photography packages start at ₹25,000. Would you like more details about our packages?';
-            } else if (userMessage.includes('booking') || userMessage.includes('book')) {
-                response = 'To book our services, please call us at +91 92144 04404 or email ssphotographyjodhpur@gmail.com';
-            } else if (userMessage.includes('wedding') || userMessage.includes('marriage')) {
-                response = 'We specialize in wedding photography with a team of 8-10 experts. We offer traditional, candid, and cinematic coverage.';
-            } else if (userMessage.includes('team') || userMessage.includes('photographer')) {
-                response = 'Our team is led by Suresh Solanki and includes specialists in traditional photography, candid shots, videography, and drone operations.';
-            } else if (userMessage.includes('video') || userMessage.includes('videography')) {
-                response = 'We offer comprehensive videography services including traditional coverage, cinematic films, and drone footage.';
-            } else {
-                response = 'I\'m here to help with photography services. You can ask about pricing, booking, or our team.';
+            // Add context about photography to help the AI provide relevant responses
+            const prompt = `You are a photography assistant for SS Photography, a wedding photography business run by Suresh Solanki in Jodhpur. 
+            Respond to the following query in a helpful and professional manner: "${userMessage}"`;
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: prompt
+                            }]
+                        }]
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.candidates && data.candidates[0].content.parts[0].text) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    throw new Error('Invalid response from API');
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                throw error;
             }
-            
-            addMessage(response, 'bot');
         };
 
         // Event listeners for chatbot
